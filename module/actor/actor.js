@@ -393,7 +393,7 @@ export class KamigakariActor extends Actor {
 
       const macro = game.macros.contents.find(m => (m.name === item.system.macro));
       if (macro != undefined)
-          macro.execute();
+          macro.execute({ actor: this });
       else if (item.system.macro != "")
           new Dialog({
               title: "alert",
