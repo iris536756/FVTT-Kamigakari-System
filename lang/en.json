@@ -51,14 +51,17 @@
     "KG.RechargeSpirit": "Spirit Dice Recharged!",
     "KG.ResetSpiritPoolAlert": "Reset Spirit Dice?",
     "KG.ResetSpiritPoolMessage": "Spirit Dice Reseted!",
+    "KG.UseSpiritTitle": "Spend Spirit Die",
     "KG.UseSpiritAlert": "Spend Spirit Die?",
     "KG.UseSpiritMessage": "Spirit Die Spent!",
+    "KG.ChangeSpiritTitle": "Change Spirit Die",
     "KG.ChangeSpiritAlert": "Change Spirit Die To:",
     "KG.ChangeSpiritMessage": "Spirit Die Changed!",
+    "KG.SpiritViewer": "Spirit Dice Viewer",
     "KG.TalentCreate": "Create new talent",
     "KG.RaceCreate": "Create new ancestry",
     "KG.StyleCreate": "Create new facet",
-    "KG.Description": "Description",
+
     "KG.Details": "Details",
     "KG.RaceTalents": "Ancestry Talents",
     "KG.StyleTalents": "Facet Talents",
@@ -204,9 +207,15 @@
     "KG.Action15": "Other",
     
     "KG.SpentTiming": "Did you spent this timing?",
+    "KG.SelectTargets": "Select Targets",
     "KG.SelectTarget": "Select talent's Target",
+
+    "KG.SelectActors": "Select Actors",
+    "KG.Owner": "Owner",
+    "KG.Observer": "Observer",
     
     "KG.Spiritviewer": "Spirit Dice Viewer",
+    "KG.InfluenceTitle": "Influence",
     "KG.InfluenceDialog": "Choose 2 dices to exchange",
     "KG.ActionDice": "Action Dice",
 

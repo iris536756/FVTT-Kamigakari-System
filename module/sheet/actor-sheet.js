@@ -190,7 +190,7 @@ export class KamigakariActorSheet extends ActorSheet {
         return;
 
       await this.actor.update({"system.attributes.overflow.value": overflow + add});
-      let chatData = {"content": "Overflow : " + overflow + "->" + (overflow + add) };
+      let chatData = {"content": `${game.i18n.localize('KG.Overflow')} : ` + overflow + "→" + (overflow + add) };
       ChatMessage.create(chatData);
     });
 
@@ -365,7 +365,7 @@ export class KamigakariActorSheet extends ActorSheet {
         buttons: {
           confirm: {
             icon: '<i class="fas fa-check"></i>',
-            label: "Confirm",
+            label: `${game.i18n.localize("DIALOG.Confirm")}`,
             callback: async () => {
               const dices = JSON.parse(JSON.stringify(this.actor.system.attributes.spirit_dice.value));
 
@@ -414,7 +414,7 @@ export class KamigakariActorSheet extends ActorSheet {
     const oriValue = dices[index];
 
     new Dialog({
-        title: 'Use Spirit Dice',
+        title: `${game.i18n.localize("KG.UseSpiritTitle")}`,
         content: `
           <h2>${game.i18n.localize("KG.UseSpiritAlert")}</h2>
           <h3 style="text-align: center">${oriValue}</h3>
@@ -422,7 +422,7 @@ export class KamigakariActorSheet extends ActorSheet {
         buttons: {
           confirm: {
             icon: '<i class="fas fa-check"></i>',
-            label: "Confirm",
+            label: `${game.i18n.localize("DIALOG.Confirm")}`,
             callback: async () => {
               dices[index] = 0;
               await this.actor.update({"system.attributes.spirit_dice.value": dices});
@@ -445,7 +445,7 @@ export class KamigakariActorSheet extends ActorSheet {
     const oriValue = dices[index];
 
     new Dialog({
-        title: 'Change Spirit Dice',
+        title: `${game.i18n.localize("KG.ChangeSpiritTitle")}`,
         content: `
           <h2>${game.i18n.localize("KG.ChangeSpiritAlert")}</h2>
           <div style="margin: 4px 0;"><input type="number" id="dice-num"/></div>
@@ -454,7 +454,7 @@ export class KamigakariActorSheet extends ActorSheet {
         buttons: {
           confirm: {
             icon: '<i class="fas fa-check"></i>',
-            label: "Confirm",
+            label: `${game.i18n.localize("DIALOG.Confirm")}`,
             callback: async () => {
               var answer = $("#dice-num").val();
 
@@ -583,14 +583,14 @@ export class KamigakariActorSheet extends ActorSheet {
     event.preventDefault();
     
     new Dialog({
-        title: 'Reset HP',
+        title: `${game.i18n.localize("DIALOG.ResetHP")}`,
         content: `
           <h2>${game.i18n.localize("KG.ResetHPAlert")}</h2>
         `,
         buttons: {
           confirm: {
             icon: '<i class="fas fa-check"></i>',
-            label: "Confirm",
+            label: `${game.i18n.localize("DIALOG.Confirm")}`,
             callback: async () => {
               await this.actor.update({"system.attributes.hp.value": this.actor.system.attributes.hp.max});
 
@@ -607,14 +607,14 @@ export class KamigakariActorSheet extends ActorSheet {
     event.preventDefault();
     
     new Dialog({
-        title: 'Reset Crest',
+        title: `${game.i18n.localize("DIALOG.ResetCrest")}`,
         content: `
           <h2>${game.i18n.localize("KG.ResetSpiritAlert")}</h2>
         `,
         buttons: {
           confirm: {
             icon: '<i class="fas fa-check"></i>',
-            label: "Confirm",
+            label: `${game.i18n.localize("DIALOG.Confirm")}`,
             callback: async () => {
               await this.actor.update({"system.attributes.spirit.value": 22});
 

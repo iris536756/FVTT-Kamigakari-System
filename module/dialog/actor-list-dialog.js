@@ -9,17 +9,17 @@ export class ActorListDialog extends Dialog {
         this.actors = this.getActors();
 
         this.data = {
-            title: "Select Actors",
+            title: game.i18n.localize("KG.SelectActors"),
             content: this.getContent(),
             buttons: {
                 "cancel": {
                     icon: '<i class="fas fa-times"></i>',
-                    label: "Cancel",
+                    label: game.i18n.localize("DIALOG.Cancel"),
                     callback: () => console.log("Canceled")
                 },
                 "select": {
                     icon: '<i class="fas fa-check"></i>',
-                    label: "Select",
+                    label: game.i18n.localize("DIALOG.Select"),
                     callback: () => this._submit()
                 }
             },
@@ -45,11 +45,11 @@ export class ActorListDialog extends Dialog {
     }
 
     getContent() {
-        let viewName = (this.toggle) ? "Owner" : "Observer";
+        let viewName = game.i18n.localize(this.toggle ? "KG.Owner" : "KG.Observer");
         let content = 
         `<h2 class="flexrow" style="padding-bottom: 2px; margin-bottom: 4px;">
-            <span>Select Actors</span>
-            <button style="flex: 0" id="test">${viewName}</button>
+            <span>${game.i18n.localize("KG.SelectActors")}</span>
+            <button style="flex: 0; white-space: nowrap;" id="test">${viewName}</button>
         </h2>`;
         content += '<select id="actor-select-dialog" multiple style="width: 100%; height: 480px">';
 

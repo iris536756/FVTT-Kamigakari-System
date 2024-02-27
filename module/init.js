@@ -122,7 +122,7 @@ Hooks.on("updateItem", () => Hooks.call("updateActor"));
 Hooks.on("getSceneControlButtons", function(controls) {
     controls[0].tools.push({
         name: "diceviewer",
-        title: "Spirit Dice Viewer",
+        title: game.i18n.localize("KG.SpiritViewer"),
         icon: "fas fa-yin-yang",
         visible: true,
         onClick: () => game.kamigakari.showSpiritDiceViewer(),
@@ -214,11 +214,11 @@ async function chatListeners(html) {
         const buttons = {
             "cancel": {
                 icon: '<i class="fas fa-times"></i>',
-                label: "Cancel"
+                label: game.i18n.localize("DIALOG.Cancel"),
             },
             "use": {
                 icon: '<i class="fas fa-check"></i>',
-                label: "Use",
+                label: game.i18n.localize("DIALOG.Use"),
                 callback: async () => {
                     const actor = game.actors.get(data.actorId);
                     const item = actor.items.get(data.itemId);
@@ -253,14 +253,14 @@ async function chatListeners(html) {
                         confirm();
                     else {
                         new Dialog({
-                            title: 'Select Targets',
+                            title: game.i18n.localize("KG.SelectTargets"),
                             content: `
                               <h2>${game.i18n.localize("KG.SelectTarget")}</h2>
                             `,
                             buttons: {
                                 confirm: {
                                     icon: '<i class="fas fa-check"></i>',
-                                    label: "Confirm",
+                                    label: game.i18n.localize("DIALOG.Confirm"),
                                     callback: async () => {
                                         if (item.system.effect.disable != "-") {
                                             let targets = game.user.targets;
@@ -358,7 +358,7 @@ async function setSpiritDice() {
     }
 
     new Dialog({
-        title: 'Spirit Dice',
+        title: game.i18n.localize('KG.SpiritDice'),
         content: `
             <h2>How many do you want to change to?\n ex) 4, 5</h2>
             <div style="margin: 4px 0;"><input type="number" id="dice-num"></div>
@@ -367,7 +367,7 @@ async function setSpiritDice() {
         buttons: {
             confirm: {
                 icon: '<i class="fas fa-check"></i>',
-                label: "Confirm",
+                label: game.i18n.localize("DIALOG.Confirm"),
                 callback: async () => {
                     var answer = $("#dice-num").val();
 

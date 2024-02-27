@@ -51,14 +51,17 @@
     "KG.RechargeSpirit": "영력 주사위를 충전하였습니다!",
     "KG.ResetSpiritPoolAlert": "영력 주사위를 초기화하시겠습니까?",
     "KG.ResetSpiritPoolMessage": "영력 주사위가 초기화되었습니다!",
+    "KG.UseSpiritTitle": "Spend Spirit Die",
     "KG.UseSpiritAlert": "영력 주사위를 사용하시겠습니까?",
     "KG.UseSpiritMessage": "영력 주사위를 사용했습니다.",
+    "KG.ChangeSpiritTitle": "Change Spirit Die",
     "KG.ChangeSpiritAlert": "어떤 눈으로 바꿀 것입니까?",
     "KG.ChangeSpiritMessage": "영력 주사위가 바뀌었습니다.",
+    "KG.SpiritViewer": "Spirit Dice Viewer",
     "KG.TalentCreate": "새 탤런트 생성",
     "KG.RaceCreate": "새 종족 생성",
     "KG.StyleCreate": "새 칭호 생성",
-    "KG.Description": "소개",
+
     "KG.Details": "상세",
     "KG.RaceTalents": "종족 탤런트",
     "KG.StyleTalents": "칭호 탤런트",
@@ -204,9 +207,15 @@
     "KG.Action15": "그 외",
     
     "KG.SpentTiming": "이 타이밍을 소비했습니까?",
+    "KG.SelectTargets": "Select Targets",
     "KG.SelectTarget": "탤런트의 대상을 골라주세요.",
+
+    "KG.SelectActors": "Select Actors",
+    "KG.Owner": "Owner",
+    "KG.Observer": "Observer",
     
     "KG.Spiritviewer": "영력 주사위 목록",
+    "KG.InfluenceTitle": "Influence",
     "KG.InfluenceDialog": "어느 눈과 교환하시겠습니까?",
     "KG.ActionDice": "판정 주사위",
 

@@ -5,7 +5,7 @@ export class DicesDialog extends Dialog {
 
         this.selected = selected;
         this.data = {
-            title: "Spirit Dice Viewer",
+            title: `${game.i18n.localize("KG.SpiritViewer")}`,
             content: "",
             buttons: buttons
         };
@@ -72,7 +72,7 @@ export class DicesDialog extends Dialog {
             return;
 
           await actor.update({"data.attributes.overflow.value": overflow + add});
-          let chatData = {"content": "Overflow : " + overflow + "->" + (overflow + add) };
+          let chatData = {"content": `${game.i18n.localize('KG.Overflow')} : ` + overflow + "→" + (overflow + add) };
           ChatMessage.create(chatData);
         });
 
@@ -106,7 +106,7 @@ export class DicesDialog extends Dialog {
         event.preventDefault();
 
         new Dialog({
-            title: 'Use Spirit Dice',
+            title: `${game.i18n.localize("KG.UseSpiritTitle")}`,
             content: `
               <h2>${actor.name} - ${game.i18n.localize("KG.UseSpiritAlert")}</h2>
               <h3 style="text-align: center">${oriValue}</h3>
@@ -114,7 +114,7 @@ export class DicesDialog extends Dialog {
             buttons: {
               confirm: {
                 icon: '<i class="fas fa-check"></i>',
-                label: "Confirm",
+                label: `${game.i18n.localize("DIALOG.Confirm")}`,
                 callback: async () => {
                   var dices = JSON.parse(JSON.stringify(actor.system.attributes.spirit_dice.value));
 
@@ -135,7 +135,7 @@ export class DicesDialog extends Dialog {
         event.preventDefault();
 
         new Dialog({
-            title: 'Change Spirit Dice',
+            title: `${game.i18n.localize("KG.ChangeSpiritTitle")}`,
             content: `
               <h2>${actor.name} - ${game.i18n.localize("KG.ChangeSpiritAlert")}</h2>
               <div style="margin: 4px 0;"><input type="number" id="dice-num"/></div>
@@ -144,7 +144,7 @@ export class DicesDialog extends Dialog {
             buttons: {
               confirm: {
                 icon: '<i class="fas fa-check"></i>',
-                label: "Confirm",
+                label: game.i18n.localize("DIALOG.Confirm"),
                 callback: async () => {
                   var answer = $("#dice-num").val();
 

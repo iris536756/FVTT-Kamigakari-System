@@ -27,6 +27,11 @@
       "lang": "ko",
       "name": "Korean",
       "path": "lang/ko.json"
+    },
+    {
+      "lang": "zh-tw",
+      "name": "中文（台灣）",
+      "path": "lang/zh-tw.json"
     }
   ],
   "packs": [

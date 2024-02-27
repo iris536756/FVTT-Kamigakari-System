@@ -88,7 +88,7 @@ export class DamageController {
             buttons: {
                 confirm: {
                     icon: '<i class="fas fa-check"></i>',
-                    label: "Confirm",
+                    label: `${game.i18n.localize("DIALOG.Confirm")}`,
                     callback: async () => {
                         let data = await callback();
                         
@@ -140,7 +140,7 @@ export class DamageController {
             buttons: {
                 confirm: {
                     icon: '<i class="fas fa-check"></i>',
-                    label: "Confirm",
+                    label: `${game.i18n.localize("DIALOG.Confirm")}`,
                     callback: () => DamageController.prepareDamage(data)
                 }
             },
