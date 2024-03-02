@@ -178,7 +178,7 @@ Hooks.on("updateCombat", async function (data, delta) {
     }
     
 
-    if (game.user.character === undefined || game.user.character.type === "enemy")
+    if (!game.user.character || game.user.character.type === "enemy")
         return;
     
     var combatant = data.turns[(delta.turn == undefined) ? 0 : delta.turn];
