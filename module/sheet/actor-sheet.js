@@ -159,14 +159,16 @@ export class KamigakariActorSheet extends ActorSheet {
       console.log(system.attributes.effects);
 
       actorData.effects = Object.values(system.attributes.effects).map( i => {
-        let actor = game.actors.get(i.actorId);
-        if (!actor) return null;
-        let item = actor.items.get(i.itemId);
-        let data = item;
+        const actor = game.actors.get(i.actorId);
+        const data = actor ?
+          actor.items.get(i.itemId) :
+          Item.create({ name: 'Unknown Effect', type: 'talent' })
+        ;
+
         data.actorName = actor.name;
         data.disable = i.disable;
-        return item;
-      }).filter(i => !!i);
+        return data;
+      });
     }
 
     actorData.attackOptions = attackOptions;
