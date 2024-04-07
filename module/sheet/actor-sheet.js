@@ -160,13 +160,13 @@ export class KamigakariActorSheet extends ActorSheet {
 
       actorData.effects = Object.values(system.attributes.effects).map( i => {
         let actor = game.actors.get(i.actorId);
+        if (!actor) return null;
         let item = actor.items.get(i.itemId);
         let data = item;
         data.actorName = actor.name;
         data.disable = i.disable;
         return item;
-
-      });
+      }).filter(i => !!i);
     }
 
     actorData.attackOptions = attackOptions;
