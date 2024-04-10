@@ -1,11 +1,12 @@
-<form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
+<form class="{{cssClass}} item-form flexcol" autocomplete="off">
+    <header class="sheet-header flexrow">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" ></h1>
         </div>
     </header>
 
-    <table>
+    <table class="flex0">
         <colgroup>
             <col style="width: 15%;">
             <col style="width: 15%;">
@@ -53,11 +54,11 @@
 
     </table>
 
-    <div class="cell cell--bio">
-        <label class="cell--title">{{localize "KG.Description"}}</label>
+    <div class="cell cell--bio flex1 flexcol">
+        <label class="cell--title" style="flex: 0 0 auto;">{{localize "KG.Description"}}</label>
         {{!-- We're avoiding WYSIWYGs... for now... --}}
         {{!-- {{editor content=system.details.biography target="system.details.biography" button=true owner=owner editable=editable}} --}}
         <textarea class="biography" name="system.description" rows="5" title="Hey there! Who are you!?"
-                data-dtype="String">{{system.description}}</textarea>
+                data-dtype="String" style="flex: 1 1 auto; resize: none;">{{system.description}}</textarea>
     </div>
 </form>
