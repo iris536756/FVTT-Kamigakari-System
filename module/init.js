@@ -240,7 +240,7 @@ async function chatListeners(html) {
                         ChatMessage.create({"content": game.i18n.localize("KG.UseTalent") + ": " + item.name});
 
                         if (macro != undefined)
-                            macro.execute();
+                            macro.execute({ actor });
                         else if (item.system.macro != "")
                             new Dialog({
                                 title: "macro",
