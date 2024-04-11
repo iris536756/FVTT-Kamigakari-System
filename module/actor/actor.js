@@ -396,7 +396,7 @@ export class KamigakariActor extends Actor {
           macro.execute({ actor: this });
       else if (item.system.macro != "")
           new Dialog({
-              title: "alert",
+              title: game.i18n.localize("DIALOG.Alert"),
               content: `Do not find this macro: ${item.system.macro}`,
               buttons: {}
           }).render(true);
@@ -409,7 +409,7 @@ export class KamigakariActor extends Actor {
   /* Spirit Burn */
   async _transcend() {
     new Dialog({
-        title: 'Change Spirit Dice',
+        title: game.i18n.localize("KG.ChangeSpiritTitle"),
         content: `
           <h2>${game.i18n.localize("KG.TranscendAlert")}</h2>
           <div style="margin: 4px 0;"><input type="number" id="dice-num"/></div>
@@ -418,7 +418,7 @@ export class KamigakariActor extends Actor {
         buttons: {
           confirm: {
             icon: '<i class="fas fa-check"></i>',
-            label: "Confirm",
+            label: game.i18n.localize("DIALOG.Confirm"),
             callback: async () => {
               var answer = $("#dice-num").val();
 

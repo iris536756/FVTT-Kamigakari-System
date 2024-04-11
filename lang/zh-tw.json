@@ -257,5 +257,6 @@
     "DIALOG.Use": "使用",
     "DIALOG.Select": "選擇",
     "DIALOG.ResetHP": "重置生命力",
+    "DIALOG.Alert": "警告",
     "DIALOG.ResetCrest": "重置靈紋"
 }
