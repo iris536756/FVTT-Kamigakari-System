@@ -377,11 +377,11 @@ export class TimingHooks {
                         buttons: {
                             confirm: {
                                 icon: '<i class="fas fa-check"></i>',
-                                label: "Confirm"
+                                label: game.i18n.localize("DIALOG.Confirm"),
                             },
                             cancel: {
                                 icon: '<i class="fas fa-times"></i>',
-                                label: "Cancel",
+                                label: game.i18n.localize("DIALOG.Cancel"),
                                 callback: () => attack.render(true)
                             }
                         }
