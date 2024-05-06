@@ -1,0 +1,16 @@
+{{!-- We're avoiding WYSIWYGs... for now... --}}
+{{!-- {{editor content=system.details.biography target="system.details.biography" button=true owner=owner editable=editable}} --}}
+
+<div class="cell cell--bio flex1 flexcol {{type}} description">
+  <label class="cell--title">
+    {{localize "KG.Description"}}
+    {{log type}}
+    {{#if (eq type "style")}}
+    <div>
+      <span>{{localize "KG.Main"}}</span> 
+      <input type="checkbox" name="system.main" {{#if system.main}}checked{{/if}}>
+    </div>
+    {{/if}}
+  </label>
+  <textarea name="system.description" title="Hey there! Who are you!?" data-dtype="String">{{system.description}}</textarea>
+</div>

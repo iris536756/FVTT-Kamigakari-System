@@ -580,6 +580,18 @@ body {
   flex: 100;
 }
 
+.kamigakari .cell.description > label {
+  flex: 0 0 auto;
+}
+.kamigakari .cell.style.description > label > div > span {
+  position: relative;
+  top: -5px;
+}
+.kamigakari .cell.description > textarea {
+  flex: 1 1 auto;
+  resize: none;
+}
+
 .kamigakari .cell--title {
   display: -webkit-box;
   display: -ms-flexbox;

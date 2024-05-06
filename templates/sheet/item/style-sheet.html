@@ -35,16 +35,5 @@
 
     </table>
 
-    <div class="cell cell--bio flex1 flexcol">
-        <label class="cell--title" style="flex: 0 0 auto;">{{localize "KG.Description"}}
-            <div>
-                <span style="position: relative; top: -5px;">{{localize "KG.Main"}}</span> 
-                <input type="checkbox" name="system.main" {{#if system.main}} checked {{/if}}>
-            </div>
-        </label>
-        {{!-- We're avoiding WYSIWYGs... for now... --}}
-        {{!-- {{editor content=system.details.biography target="system.details.biography" button=true owner=owner editable=editable}} --}}
-        <textarea class="biography" name="system.description" rows="5" title="Hey there! Who are you!?"
-                data-dtype="String" style="flex: 1 1 auto; resize: none;">{{system.description}}</textarea>
-    </div>
+    {{~> 'kamigakari.item-description' type="style"}}
 </form>
