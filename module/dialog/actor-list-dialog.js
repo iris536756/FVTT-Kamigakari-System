@@ -5,7 +5,7 @@ export class ActorListDialog extends Dialog {
     constructor(options) {
         super(options);
 
-        this.toggle = true;
+        this.filter = "KG.Owner";
         this.actors = this.getActors();
 
         this.data = {
@@ -45,7 +45,7 @@ export class ActorListDialog extends Dialog {
     }
 
     getContent() {
-        let viewName = game.i18n.localize(this.toggle ? "KG.Owner" : "KG.Observer");
+        let viewName = game.i18n.localize(this.filter);
         let content = 
         `<h2 class="flexrow" style="padding-bottom: 2px; margin-bottom: 4px;">
             <span>${game.i18n.localize("KG.SelectActors")}</span>
@@ -67,15 +67,35 @@ export class ActorListDialog extends Dialog {
     }
 
     getActors() {
-        return (this.toggle) ? 
-                game.actors.filter(e => e.type == "character" && 
-                (e.ownership['default'] == 3 || e.ownership[game.user.id] == 3) ) :
-                game.actors.filter(e => e.type == "character" && 
-                (e.ownership['default'] >= 2 || e.ownership[game.user.id] >= 2) );
+        switch (this.filter) {
+        case "KG.Players":
+            let userActorName = game.users
+                .map(user => user.character)
+                .filter(character => !!character)
+                .map(character => character.name);
+            return game.actors.filter(
+                e => e.type == "character" &&
+                (e.ownership['default'] >= 2 || e.ownership[game.user.id] >= 2) &&
+                userActorName.includes(e.name)
+            );
+        case "KG.Observer":
+            return game.actors.filter(
+                e => e.type == "character" &&
+                (e.ownership['default'] >= 2 || e.ownership[game.user.id] >= 2)
+            );
+        default: // case "KG.Owner":
+            return game.actors.filter(
+                e => e.type == "character"
+                && (e.ownership['default'] == 3 || e.ownership[game.user.id] == 3)
+            );
+        }
     }
 
     async changeCharacter(html) {
-        this.toggle = !this.toggle;
+        if (this.filter === 'KG.Players') this.filter = "KG.Owner";
+        else if (this.filter === 'KG.Observer') this.filter = "KG.Players";
+        else this.filter = "KG.Observer"; // (this.filter === 'KG.Owner')
+
         this.actors = this.getActors();
 
         this.data.content = this.getContent();
