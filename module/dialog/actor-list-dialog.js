@@ -69,14 +69,14 @@ export class ActorListDialog extends Dialog {
     getActors() {
         switch (this.filter) {
         case "KG.Players":
-            let userActorName = game.users
+            let userActorId = game.users
                 .map(user => user.character)
                 .filter(character => !!character)
-                .map(character => character.name);
+                .map(character => character.id);
             return game.actors.filter(
                 e => e.type == "character" &&
                 (e.ownership['default'] >= 2 || e.ownership[game.user.id] >= 2) &&
-                userActorName.includes(e.name)
+                userActorId.includes(e.id)
             );
         case "KG.Observer":
             return game.actors.filter(
