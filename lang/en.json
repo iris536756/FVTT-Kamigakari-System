@@ -239,5 +239,15 @@
     "TYPES.Item.race": "Ancestry",
     "TYPES.Item.style": "Facet",
     "TYPES.Item.facade": "Facade",
-    "TYPES.Item.bond": "Bond"
+    "TYPES.Item.bond": "Bond",
+
+    "DIALOG.Confirm": "Confirm",
+    "DIALOG.Cancel": "Cancel",
+    "DIALOG.Apply": "Apply",
+    "DIALOG.Change": "Change",
+    "DIALOG.Use": "Use",
+    "DIALOG.Select": "Select",
+    "DIALOG.Alert": "Alert",
+    "DIALOG.ResetHP": "Reset HP",
+    "DIALOG.ResetCrest": "Reset Crest"
 }

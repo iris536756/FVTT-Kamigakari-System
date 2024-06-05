@@ -239,5 +239,15 @@
     "TYPES.Item.race": "종족",
     "TYPES.Item.style": "칭호",
     "TYPES.Item.facade": "겉직업",
-    "TYPES.Item.bond": "감정"
+    "TYPES.Item.bond": "감정",
+
+    "DIALOG.Confirm": "Confirm",
+    "DIALOG.Cancel": "Cancel",
+    "DIALOG.Apply": "Apply",
+    "DIALOG.Change": "Change",
+    "DIALOG.Use": "Use",
+    "DIALOG.Select": "Select",
+    "DIALOG.ResetHP": "Reset HP",
+    "DIALOG.Alert": "Alert",
+    "DIALOG.ResetCrest": "Reset Crest"
 }
