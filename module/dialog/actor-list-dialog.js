@@ -75,7 +75,7 @@ export class ActorListDialog extends Dialog {
                 .map(character => character.id);
             return game.actors.filter(
                 e => e.type == "character" &&
-                (e.ownership['default'] >= 2 || e.ownership[game.user.id] >= 2) &&
+                (e.ownership['default'] >= 1 || e.ownership[game.user.id] >= 1) &&
                 userActorId.includes(e.id)
             );
         case "KG.Observer":
